@@ -107,14 +107,6 @@ style: |
     font-family: 'Inter', sans-serif;
     font-weight: 300;
   }
-  section.title a {
-    color: #80b3e0;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 0.7em;
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
-  }
   section.title footer {
     color: rgba(255,255,255,0.3);
   }
@@ -133,6 +125,9 @@ style: |
   }
   section.dark footer {
     color: rgba(255,255,255,0.3);
+  }
+  section.dark a {
+    color: #80b3e0;
   }
   section.dark::after {
     color: rgba(255,255,255,0.25);
@@ -155,6 +150,9 @@ style: |
     color: var(--color-grey-2);
     font-size: 0.9em;
   }
+  section.end a {
+    color: var(--color-accent);
+  }
 ---
 
 <!-- _class: title -->
@@ -164,8 +162,6 @@ style: |
 # Reducing Small Boat Arrivals
 
 Where should the UK focus upstream interventions?
-
-[Interactive dashboard ↗](https://chri4354.github.io/april-repo/)
 
 <!-- ~10 sec -->
 
@@ -249,5 +245,7 @@ They are the largest sources of small-boat arrivals, sit on the most active Euro
 <!-- _paginate: false -->
 
 # Thank You
+
+Explore the data: [chri4354.github.io/april-repo](https://chri4354.github.io/april-repo/)
 
 Questions?
