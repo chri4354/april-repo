@@ -44,6 +44,7 @@ footer { text-align: center; padding: 16px; font-size: 11px; color: #505a5f; }
   <div class="stat"><div class="label">Small Boats</div><div class="number" id="stat-boats">—</div></div>
   <div class="stat"><div class="label">Countries</div><div class="number" id="stat-countries">—</div></div>
   <div class="stat"><div class="label">Period</div><div class="number" id="stat-period" style="font-size:16px;">—</div></div>
+  <div class="stat"><div class="label">Top 4 Nationalities</div><div class="number" id="stat-top4" style="font-size:20px;">—</div></div>
 </div>
 
 <div class="filters">
@@ -232,6 +233,16 @@ function updateDashboard() {
   document.getElementById('stat-boats').textContent = fmt(boats);
   document.getElementById('stat-countries').textContent = countries;
   document.getElementById('stat-period').textContent = `${f.yFrom}–${f.yTo}`;
+
+  // Top 4 concentration stat
+  const natSumsAll = {};
+  filtered.forEach(r => { natSumsAll[r.nationality] = (natSumsAll[r.nationality]||0) + r.value; });
+  const sortedNats = Object.entries(natSumsAll).sort((a,b) => b[1]-a[1]);
+  const top4sum = sortedNats.slice(0,4).reduce((s,e) => s+e[1], 0);
+  const top4pct = total > 0 ? (100 * top4sum / total).toFixed(1) : 0;
+  const top4names = sortedNats.slice(0,4).map(e => e[0]);
+  document.getElementById('stat-top4').textContent = `${top4pct}%`;
+  document.getElementById('stat-top4').title = top4names.join(', ');
 
   // --- Top nationalities bar chart ---
   const natSums = {};

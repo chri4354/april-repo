@@ -107,6 +107,14 @@ style: |
     font-family: 'Inter', sans-serif;
     font-weight: 300;
   }
+  section.title a {
+    color: #80b3e0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.7em;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
   section.title footer {
     color: rgba(255,255,255,0.3);
   }
@@ -156,6 +164,8 @@ style: |
 # Reducing Small Boat Arrivals
 
 Where should the UK focus upstream interventions?
+
+[Interactive dashboard ↗](https://chri4354.github.io/april-repo/)
 
 <!-- ~10 sec -->
 
